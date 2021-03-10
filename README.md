@@ -1,3 +1,5 @@
+### 강의에 따라 타입스크립트를 공부하는 레포지토리입니다.
+
 <table align="center">
   <tr>
     <td align="center">
