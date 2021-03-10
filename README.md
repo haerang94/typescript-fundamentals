@@ -1,5 +1,9 @@
 ### 강의에 따라 타입스크립트를 공부하는 레포지토리입니다.
 
+### 강의 메모
+- [공부 메모 끄적끄적](./memo.md)
+
+
 <table align="center">
   <tr>
     <td align="center">
