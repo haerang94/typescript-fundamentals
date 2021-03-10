@@ -29,9 +29,9 @@
 /**
  * (5) sometimes we need to declare a variable w/o initializing it
  */
-// let z;
-// z = 41;
-// z = "abc"; // (6) oh no! This isn't good
+// let z; //any로 인식되는 중, 선언할 때 타입이 지정되지 않았다.
+// z = 41; //재할당
+// z = "abc"; // (6) oh no! This isn't good 에러가 나지는 않는다.
 
 /**
  * If we look at the type of z, it's `any`. This is the most flexible type
@@ -40,7 +40,7 @@
 
 /**
  * (7) we could improve this situation by providing a type annotation
- * when we declare our variable
+ * when we declare our variable. ** 변수를 선언할 때 타입을 명시해준다.
  */
 // let zz: number;
 // zz = 41;
@@ -51,21 +51,25 @@
 /**
  * (8) simple array types can be expressed using []
  */
+// let aa=[]; //never[]로 인식된다.
 // let aa: number[] = [];
 // aa.push(33);
 // aa.push("abc"); // 🚨 ERROR: Argument of type '"abc"' is not assignable to parameter of type 'number'.
 
 /**
  * (9) we can even define a tuple, which has a fixed length
+ * 정해진 길이를 가진 튜플을 만들 수도 있다.
  */
-// let bb: [number, string, string, number] = [
-//   123,
-//   "Fake Street",
-//   "Nowhere, USA",
-//   10110
-// ];
+let bb: [number, string, string, number] = [
+  123,
+  "Fake Street",
+  "Nowhere, USA",
+  10110
+];
 
 // bb = [1, 2, 3]; // 🚨 ERROR: Type 'number' is not assignable to type 'string'.
+//** 타입체크를 하지 않는다. 주의 동적으로 데이터를 넣으면서 타입을 지정해준다.*/
+// bb.push(1,4,1,4); 
 
 /**
  * (10) Tuple values often require type annotations (  : [number, number] )
@@ -78,6 +82,7 @@
 /**
  * (11) object types can be expressed using {} and property names
  */
+// 세미클론으로 구분해주는것이 좋다. 변수가 아니라 타입이라는 것을 명시해준다.
 // let cc: { houseNumber: number; streetName: string };
 // cc = {
 //   streetName: "Fake Street",
