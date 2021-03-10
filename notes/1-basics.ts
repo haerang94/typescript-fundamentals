@@ -83,14 +83,14 @@ let bb: [number, string, string, number] = [
  * (11) object types can be expressed using {} and property names
  */
 // 세미클론으로 구분해주는것이 좋다. 변수가 아니라 타입이라는 것을 명시해준다.
-// let cc: { houseNumber: number; streetName: string };
+let cc: { houseNumber: number; streetName: string };
 // cc = {
 //   streetName: "Fake Street",
 //   houseNumber: 123
 // };
-
+// 모든 타입은 모두 넣어줘야한다.
 // cc = {
-//   houseNumber: 33
+//   houseNumber: 33 //에러남
 // };
 /**
  * 🚨 Property 'streetName'
@@ -102,12 +102,14 @@ let bb: [number, string, string, number] = [
  * (12) You can use the optional operator (?) to
  * indicate that something may or may not be there
  */
+// ?: 옵션으로 타입을 넣어주는 방법(넣어도 되고 안넣어도 되고)
 // let dd: { houseNumber: number; streetName?: string };
 // dd = {
 //   houseNumber: 33
 // };
 
 // (13) if we want to re-use this type, we can create an interface
+// 재사용하려면 interface를 사용하자
 // interface Address {
 //   houseNumber: number;
 //   streetName?: string;
