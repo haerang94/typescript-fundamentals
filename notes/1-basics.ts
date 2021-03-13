@@ -124,22 +124,22 @@ let cc: { houseNumber: number; streetName: string };
  * Sometimes we have a type that can be one of several things
  */
 
-// export interface HasPhoneNumber {
-//   name: string;
-//   phone: number;
-// }
+export interface HasPhoneNumber {
+  name: string;
+  phone: number;
+}
 
-// export interface HasEmail {
-//   name: string;
-//   email: string;
-// }
+export interface HasEmail {
+  name: string;
+  email: string;
+}
 
 // let contactInfo: HasEmail | HasPhoneNumber =
 //   Math.random() > 0.5
 //     ? {
 //         // we can assign it to a HasPhoneNumber
 //         name: "Mike",
-//         phone: 3215551212
+//         phone: 3215551212,
 //       }
 //     : {
 //         // or a HasEmail
@@ -151,6 +151,7 @@ let cc: { houseNumber: number; streetName: string };
 
 /**
  * (15) Intersection types
+ * 모든 타입을 정의해줘야한다.
  */
 // let otherContactInfo: HasEmail & HasPhoneNumber = {
 //   // we _must_ initialize it to a shape that's asssignable to HasEmail _and_ HasPhoneNumber

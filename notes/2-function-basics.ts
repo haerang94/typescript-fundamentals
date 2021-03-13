@@ -3,6 +3,7 @@ import { HasEmail, HasPhoneNumber } from "./1-basics";
 //== FUNCTIONS ==//
 
 // (1) function arguments and return values can have type annotations
+// 리턴 값도 타입 지정을 할 수 있다
 // function sendEmail(to: HasEmail): { recipient: string; body: string } {
 //   return {
 //     recipient: `${to.name} <${to.email}>`, // Mike <mike@example.com>
@@ -21,10 +22,12 @@ import { HasEmail, HasPhoneNumber } from "./1-basics";
 // };
 
 // (3) return types can almost always be inferred
+// 리턴 값을 추론해준다.
 // function getNameParts(contact: { name: string }) {
 //   const parts = contact.name.split(/\s/g); // split @ whitespace
 //   if (parts.length < 2) {
 //     throw new Error(`Can't calculate name parts from name "${contact.name}"`);
+//     // 여기서 값을 return 하면 아래의 first,middle,last가 undefined로 추론된다.
 //   }
 //   return {
 //     first: parts[0],
@@ -43,6 +46,7 @@ import { HasEmail, HasPhoneNumber } from "./1-basics";
 
 // (5) we can even provide multiple function signatures
 // "overload signatures"
+//  argument에 따라서 어떻게 넣어야할지 알려주는 역할을 한다.
 // function contactPeople(method: "email", ...people: HasEmail[]): void;
 // function contactPeople(method: "phone", ...people: HasPhoneNumber[]): void;
 
@@ -68,7 +72,8 @@ import { HasEmail, HasPhoneNumber } from "./1-basics";
 // contactPeople("email", { name: "foo", phone: 12345678 });
 
 // (6) the lexical scope (this) of a function is part of its signature
-
+// 자바스크립트에서 this는 선언시에 
+// 결정되는 렉시컬 스코프를 가진다. 꼭 정의할 필요는 없지만 이런 경우가 있다.
 // function sendMessage(
 //   this: HasEmail & HasPhoneNumber,
 //   preferredMethod: "phone" | "email"
